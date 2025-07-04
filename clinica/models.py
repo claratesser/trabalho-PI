@@ -50,3 +50,13 @@ class Receita(models.Model):
 
     def __str__(self):
         return self.data_emissao
+    
+class Receita_medicamento(models.Model):
+    receita = models.ForeignKey(Receita, on_delete=models.CASCADE, related_name='medicamentos_receitados')
+    medicamento = models.ForeignKey(Medicamento, on_delete=models.PROTECT, related_name='prescricoes')
+    dosagem = models.CharField(max_length=50)
+    frequencia = models.CharField(max_length=50)
+    duracao = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"{self.dosagem}, {self.frequencia}, {self.duracao}"
