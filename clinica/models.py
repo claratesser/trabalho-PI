@@ -41,4 +41,12 @@ class Consulta(models.Model):
 
     def __str__(self):
         return f"{self.data_hora}, {self.observacoes} "
-    
+
+class Receita(models.Model):
+    data_emissao = models.DateTimeField()
+    consulta = models.ForeignKey(Consulta, on_delete=models.PROTECT, related_name='receitas')
+    medico = models.ForeignKey(Medico, on_delete=models.PROTECT, related_name='receita')
+    paciente = models.ForeignKey(Paciente, on_delete=models.PROTECT, related_name='receitas')
+
+    def __str__(self):
+        return self.data_emissao
