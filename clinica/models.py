@@ -32,3 +32,13 @@ class Medico(models.Model):
 
     def __str__(self):
         return self.nome
+    
+class Consulta(models.Model):
+    data_hora = models.DateField()
+    observacoes = models.TextField()
+    medico = models.ForeignKey(Medico, on_delete=models.PROTECT, related_name='consultas')
+    paciente = models.ForeignKey(Paciente, on_delete=models.PROTECT, related_name='consultas')
+
+    def __str__(self):
+        return f"{self.data_hora}, {self.observacoes} "
+    
