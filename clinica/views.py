@@ -3,30 +3,30 @@ from rest_framework.viewsets import ModelViewSet
 from .models import Paciente, Especialidade, Consulta, Medicamento, Medico, Receita_medicamento, Receita
 from .serializers import EstadoSerializer
 
-class EstadoViewSet(ModelViewSet):
+class PacienteViewSet(ModelViewSet):
     queryset = Paciente.objects.all()
     serializer_class = EstadoSerializer
 
-class EstadoViewSet(ModelViewSet):
+class EspecialidadeViewSet(ModelViewSet):
     queryset = Especialidade.objects.all()
     serializer_class = EstadoSerializer
 
-class EstadoViewSet(ModelViewSet):
+class ConsultaViewSet(ModelViewSet):
     queryset = Consulta.objects.all()
     serializer_class = EstadoSerializer
 
-class EstadoViewSet(ModelViewSet):
+class MedicamentoViewSet(ModelViewSet):
     queryset = Medicamento.objects.all()
     serializer_class = EstadoSerializer
 
-class EstadoViewSet(ModelViewSet):
+class MedicoViewSet(ModelViewSet):
     queryset = Medico.objects.all()
     serializer_class = EstadoSerializer
 
-class EstadoViewSet(ModelViewSet):
+class Receita_medicamentoViewSet(ModelViewSet):
     queryset = Receita_medicamento.objects.all()
     serializer_class = EstadoSerializer
 
-class EstadoViewSet(ModelViewSet):
+class ReceitaViewSet(ModelViewSet):
     queryset = Receita.objects.all()
     serializer_class = EstadoSerializer
