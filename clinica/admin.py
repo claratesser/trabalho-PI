@@ -1,6 +1,4 @@
 from django.contrib import admin
-
-from django.contrib import admin
 from .models import Medicamento, Especialidade, Paciente, Medico, Consulta, Receita, Receita_medicamento
 
 admin.site.register(Medicamento)

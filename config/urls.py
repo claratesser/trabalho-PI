@@ -1,12 +1,5 @@
 
 from django.contrib import admin
-from django.urls import path
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
-
-from django.contrib import admin
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 from clinica.views import MedicoViewSet, MedicamentoViewSet, EspecialidadeViewSet, ConsultaViewSet, ReceitaViewSet, PacienteViewSet, Receita_medicamentoViewSet
