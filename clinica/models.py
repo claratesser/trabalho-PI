@@ -23,7 +23,7 @@ class Paciente(models.Model):
     def __str__(self):
         return self.nome
     
-class Medico(models.Model):
+class Medico(models.Model):>>>>>>> dev
     nome = models.CharField(max_length=100)
     crm = models.CharField(max_length=6)
     telefone = models.IntegerField(max_length=15)
@@ -61,3 +61,5 @@ class Receita_medicamento(models.Model):
 
     def __str__(self):
         return f"{self.dosagem}, {self.frequencia}, {self.duracao}"
+        return self.data_emissao
+
