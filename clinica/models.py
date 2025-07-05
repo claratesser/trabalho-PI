@@ -23,7 +23,7 @@ class Paciente(models.Model):
     def __str__(self):
         return self.nome
     
-class Medico(models.Model):
+class Medico(models.Model):>>>>>>> dev
     nome = models.CharField(max_length=100)
     crm = models.CharField(max_length=6)
     telefone = models.IntegerField(max_length=15)
@@ -50,3 +50,16 @@ class Receita(models.Model):
 
     def __str__(self):
         return self.data_emissao
+    
+class Receita_medicamento(models.Model):
+    receita = models.ForeignKey('Receita', on_delete=models.CASCADE)
+    medicamento = models.ForeignKey('Medicamento', on_delete=models.PROTECT)
+
+    dosagem = models.CharField(max_length=30)
+    frequencia = models.CharField(max_length=50)
+    duracao = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"{self.dosagem}, {self.frequencia}, {self.duracao}"
+        return self.data_emissao
+
